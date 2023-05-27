@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router, } from '@angular/router';
+import { fakeListings } from 'src/app/fake-data';
+import { Listing } from 'src/app/types';
 
 @Component({
   selector: 'app-contact-page',
@@ -6,5 +9,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact-page.component.css']
 })
 export class ContactPageComponent {
+
+  email: string = "";
+  message: string = "";
+  listing: Listing | any;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
+  
+  ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.listing = fakeListings.find(listing => listing.id === id)
+    this.message = `Hi, I'm interested in your ${this.listing.name}!`
+  }
+
+  sendMessage() {
+    alert('Your message has been sent!');
+    this.router.navigateByUrl('/listings')
+  }
 
 }
