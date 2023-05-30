@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { fakeListings } from 'src/app/fake-data';
+import { ListingsService } from 'src/app/service/listings.service';
 import { Listing } from 'src/app/types';
 
 @Component({
@@ -11,8 +11,12 @@ export class ListingsPageComponent {
 
   listings: Listing[] = [];
 
+  constructor(
+    private listingsService: ListingsService
+  ) {}
+
   ngOnInit() {
-    this.listings = fakeListings;
+    this.listingsService.getListings().subscribe(list => this.listings = list);
   }
   
 }
