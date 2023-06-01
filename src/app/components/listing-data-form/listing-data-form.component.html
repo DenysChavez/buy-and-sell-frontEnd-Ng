@@ -3,19 +3,19 @@
         <label for="name">
             Name:
         </label>
-        <input id="name" name="name" type="text" [(ngModel)]="currentName" />
+        <input id="name" name="name" type="text" [(ngModel)]="currentName" required/>
     </div>
     <div>
         <label for="description">
             Item Description:
         </label>
-        <input id="description" name="description" type="text" [(ngModel)]="currentDescription" />
+        <input id="description" name="description" type="text" [(ngModel)]="currentDescription" required/>
     </div>
     <div>
         <label for="price">
             Price:
         </label>
-        <input id="price" name="price" type="text" [(ngModel)]="currentPrice" />
+        <input id="price" name="price" type="text" [(ngModel)]="currentPrice" required=/>
     </div>
     <button type="submit">{{buttonText}}</button>
 </form>

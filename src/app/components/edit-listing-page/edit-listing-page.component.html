@@ -5,7 +5,7 @@
         [currentName]="listing.name"
         [currentDescription]="listing.description"
         [currentPrice]="listing.price"
-        (onSubmit)="onSubmit()"></app-listing-data-form>
+        (onSubmit)="onSubmit($event)"></app-listing-data-form>
 </div>
 <div class="content-box" *ngIf="!listing">
     <h3>Loading...</h3>
