@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AngularFireModule } from '@angular/fire/compat'
+import {AngularFireAuthModule} from '@angular/fire/compat/auth'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +16,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListingDetailPageComponent } from './components/listing-detail-page/listing-detail-page.component';
+import { environment } from './environments/environment';
 
 
 @NgModule({
@@ -33,6 +36,8 @@ import { ListingDetailPageComponent } from './components/listing-detail-page/lis
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot([
       {
         path: '',
