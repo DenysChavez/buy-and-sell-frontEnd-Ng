@@ -1,12 +1,14 @@
+require('dotenv').config();
+
 export const environment = {
     firebase: {
-        apiKey: "AIzaSyAM4ACBJoPCGqqtbr2Zk4DXPI46WWgGsW0",
-        authDomain: "buy-and-sell-928e2.firebaseapp.com",
-        projectId: "buy-and-sell-928e2",
-        storageBucket: "buy-and-sell-928e2.appspot.com",
-        messagingSenderId: "214285717279",
-        appId: "1:214285717279:web:f9464843436b5d2997aa2a",
-        measurementId: "G-6D2Q40JVQD" 
+        apiKey: process.env["API_KEY"],
+        authDomain: process.env["AUTHDOMAIN"],
+        projectId: process.env["PROJECT_ID"],
+        storageBucket: process.env["STORAGE_BUCKET"],
+        messagingSenderId: process.env["MESSAGING_SENDER_ID"],
+        appId: process.env["APP_ID"],
+        measurementId: process.env["MEASUREMENT_ID"]
     }
   };
   
